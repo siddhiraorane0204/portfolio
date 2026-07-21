@@ -1,6 +1,18 @@
 // =========================================================
 // Scroll progress bar
 // =========================================================
+const navbar = document.querySelector(".nav");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 80){
+        navbar.classList.add("scrolled");
+    }else{
+        navbar.classList.remove("scrolled");
+    }
+
+});
+
 const scrollProgress = document.getElementById('scrollProgress');
 
 function updateScrollProgress() {
@@ -51,11 +63,6 @@ if (window.matchMedia('(hover: hover)').matches) {
     });
   });
 }
-
-// =========================================================
-// Footer year
-// =========================================================
-document.getElementById('year').textContent = new Date().getFullYear();
 
 // =========================================================
 // Mobile nav toggle
